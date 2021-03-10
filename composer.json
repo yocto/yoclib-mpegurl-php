@@ -20,12 +20,12 @@
   },
   "autoload": {
 	"psr-4": {
-	  "YOCLIB\\WBXML\\": "src/"
+	  "YOCLIB\\MPEGURL\\": "src/"
 	}
   },
   "autoload-dev": {
 	"psr-4": {
-	  "YOCLIB\\WBXML\\Tests\\": "tests/"
+	  "YOCLIB\\MPEGURL\\Tests\\": "tests/"
 	}
   }
 }
