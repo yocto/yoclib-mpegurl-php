@@ -44,7 +44,7 @@ class MPEGURL{
         $lines = [];
 
         while(($line = fgets($stream))!==false){
-            $lines = MPEGURLLine::read($line);
+            $lines[] = MPEGURLLine::read($line);
         }
 
         return new self($lines);
