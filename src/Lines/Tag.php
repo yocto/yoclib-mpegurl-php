@@ -67,8 +67,169 @@ class Tag extends Comment{
         switch($version){
             case MPEGURL::VERSION_1:{
                 $tags = array_merge($tags,[
-                    //Draft 00
-
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_2:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_3:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                    //Version 3 - Draft 06
+                    self::EXT_X_PLAYLIST_TYPE,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_4:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                    //Version 3 - Draft 06
+                    self::EXT_X_PLAYLIST_TYPE,
+                    //Version 4 - Draft 07
+                    self::EXT_X_BYTERANGE,
+                    self::EXT_X_MEDIA,
+                    self::EXT_X_I_FRAMES_ONLY,
+                    self::EXT_X_I_FRAME_STREAM_INF,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_5:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                    //Version 3 - Draft 06
+                    self::EXT_X_PLAYLIST_TYPE,
+                    //Version 4 - Draft 07
+                    self::EXT_X_BYTERANGE,
+                    self::EXT_X_MEDIA,
+                    self::EXT_X_I_FRAMES_ONLY,
+                    self::EXT_X_I_FRAME_STREAM_INF,
+                    //Version 5 - Draft 09
+                    self::EXT_X_MAP,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_6:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ALLOW_CACHE,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                    //Version 3 - Draft 06
+                    self::EXT_X_PLAYLIST_TYPE,
+                    //Version 4 - Draft 07
+                    self::EXT_X_BYTERANGE,
+                    self::EXT_X_MEDIA,
+                    self::EXT_X_I_FRAMES_ONLY,
+                    self::EXT_X_I_FRAME_STREAM_INF,
+                    //Version 5 - Draft 09
+                    self::EXT_X_MAP,
+                    //Version 6 - Draft 12
+                    self::EXT_X_DISCONTINUITY_SEQUENCE,
+                    self::EXT_X_START,
+                    //Version 6 - Draft 13
+                    self::EXT_X_INDEPENDENT_SEGMENTS,
+                ]);
+                break;
+            }
+            case MPEGURL::VERSION_7:{
+                $tags = array_merge($tags,[
+                    //Version 1 - Draft 00
+                    self::EXT_X_TARGETDURATION,
+                    self::EXT_X_MEDIA_SEQUENCE,
+                    self::EXT_X_KEY,
+                    self::EXT_X_PROGRAM_DATE_TIME,
+                    self::EXT_X_ENDLIST,
+                    self::EXT_X_STREAM_INF,
+                    //Version 1 - Draft 02
+                    self::EXT_X_DISCONTINUITY,
+                    //Version 2 - Draft 03
+                    self::EXT_X_VERSION,
+                    //Version 3 - Draft 06
+                    self::EXT_X_PLAYLIST_TYPE,
+                    //Version 4 - Draft 07
+                    self::EXT_X_BYTERANGE,
+                    self::EXT_X_MEDIA,
+                    self::EXT_X_I_FRAMES_ONLY,
+                    self::EXT_X_I_FRAME_STREAM_INF,
+                    //Version 5 - Draft 09
+                    self::EXT_X_MAP,
+                    //Version 6 - Draft 12
+                    self::EXT_X_DISCONTINUITY_SEQUENCE,
+                    self::EXT_X_START,
+                    //Version 6 - Draft 13
+                    self::EXT_X_INDEPENDENT_SEGMENTS,
+                    //Version 7 - Draft 14
+                    self::EXT_X_SESSION_DATA,
+                    //Version 7 - Draft 17
+                    self::EXT_X_SESSION_KEY,
+                    //Version 7 - Draft 19
+                    self::EXT_X_DATERANGE,
                 ]);
                 break;
             }
