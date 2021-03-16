@@ -3,6 +3,14 @@ namespace YOCLIB\MPEGURL;
 
 class MPEGURL{
 
+    public const VERSION_1 = 1;
+    public const VERSION_2 = 2;
+    public const VERSION_3 = 3;
+    public const VERSION_4 = 4;
+    public const VERSION_5 = 5;
+    public const VERSION_6 = 6;
+    public const VERSION_7 = 7;
+
     /**
      * @var MPEGURLLine[]
      */

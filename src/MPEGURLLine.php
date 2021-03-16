@@ -5,6 +5,7 @@ use YOCLIB\MPEGURL\Lines\Comment;
 use YOCLIB\MPEGURL\Lines\EmptyLocation;
 use YOCLIB\MPEGURL\Lines\Location;
 use YOCLIB\MPEGURL\Lines\Tag;
+use YOCLIB\MPEGURL\Lines\Tags\EXT_X_VERSION;
 use YOCLIB\MPEGURL\Lines\Tags\EXTINF;
 use YOCLIB\MPEGURL\Lines\Tags\EXTMxU;
 
@@ -41,19 +42,20 @@ abstract class MPEGURLLine{
      * @return Tag|null
      */
     private static function readTag($input){
-        $tag = explode(':',$input)[0] ?? '';
+        $tag = substr(explode(':',$input)[0] ?? '',1);
         switch($tag){
-            case '#EXTM0U':
-            case '#EXTM1U':
-            case '#EXTM2U':
-            case '#EXTM3U':
-            case '#EXTM4U':
-            case '#EXTM5U':
-            case '#EXTM6U':
-            case '#EXTM7U':
-            case '#EXTM8U':
-            case '#EXTM9U':new EXTMxU($input);break;
-            case '#EXTINF':new EXTINF($input);break;
+            case Tag::EXTMxU(0):
+            case Tag::EXTMxU(1):
+            case Tag::EXTMxU(2):
+            case Tag::EXTMxU(3):
+            case Tag::EXTMxU(4):
+            case Tag::EXTMxU(5):
+            case Tag::EXTMxU(6):
+            case Tag::EXTMxU(7):
+            case Tag::EXTMxU(8):
+            case Tag::EXTMxU(9):new EXTMxU($input);break;
+            case Tag::EXTINF:new EXTINF($input);break;
+            case 'EXT-X-VERSION':new EXT_X_VERSION($input);break;
         }
         return new Tag($input);
     }
