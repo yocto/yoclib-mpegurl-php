@@ -5,6 +5,15 @@ use YOCLIB\MPEGURL\MPEGURL;
 
 class Tag extends Comment{
 
+    /**
+     * Tag constructor.
+     * @param $tag string Tag name
+     * @param $value string Tag value
+     */
+    public function __construct($tag,$value=null){
+        parent::__construct($tag.($value==null?'':':'.$value));
+    }
+
     public const EXTM3U = 'EXTM3U';
     public const EXTINF = 'EXTINF';
 
@@ -43,6 +52,16 @@ class Tag extends Comment{
     public const EXT_X_SESSION_KEY = 'EXT-X-SESSION-KEY';
     //Version 7 - Draft 19
     public const EXT_X_DATERANGE = 'EXT-X-DATERANGE';
+
+    public function getName(){
+        $parts = explode(':',$this->line,1);
+        return substr($parts[0] ?? '',1);
+    }
+
+    public function getValue(){
+        $parts = explode(':',$this->line,1);
+        return $parts[1] ?? null;
+    }
 
     public static function EXTMxU($x){
         return 'EXTM'.$x.'U';
