@@ -17,9 +17,9 @@ Read:
 use YOCLIB\MPEGURL\MPEGURL;
 
 $fileContent = '';
-$fileContent .= '#EXTM3U';
-$fileContent .= '#EXTINF:123,The example file';
-$fileContent .= '/home/user/test.mp3';
+$fileContent .= '#EXTM3U'."\r\n";
+$fileContent .= '#EXTINF:123,The example file'."\r\n";
+$fileContent .= '/home/user/test.mp3'."\r\n";
 
 $mpegurl = MPEGURL::read($fileContent);
 ```
