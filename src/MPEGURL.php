@@ -1,6 +1,8 @@
 <?php
 namespace YOCLIB\MPEGURL;
 
+use YOCLIB\MPEGURL\Lines\Tags\EXTMxU;
+
 class MPEGURL{
 
     public const VERSION_1 = 1;
@@ -20,6 +22,10 @@ class MPEGURL{
         $this->lines = $lines;
     }
 
+    public function addLine(MPEGURLLine $line){
+        $this->lines[] = $line;
+    }
+
     /**
      * Get the lines
      * @return MPEGURLLine[]
@@ -30,7 +36,10 @@ class MPEGURL{
 
     public function isExtended(): bool{
         if(count($this->lines)>=1){
-            //$this->lines[0]->
+            $line = $this->lines[0];
+            if($line instanceof EXTMxU){
+                return true;
+            }
         }
         return false;
     }
@@ -56,6 +65,26 @@ class MPEGURL{
         }
 
         return new self($lines);
+    }
+
+    /**
+     * @param MPEGURL $input
+     * @return string
+     */
+    public static function write(MPEGURL $input){
+        $output = '';
+        foreach($input->getLines() AS $line){
+            $output .= $line->getLine();
+        }
+        return $output;
+    }
+
+    /**
+     * @param $stream
+     * @param MPEGURL $input
+     */
+    public static function writeStream($stream,MPEGURL $input){
+        fputs($stream,self::write($input));
     }
 
 }

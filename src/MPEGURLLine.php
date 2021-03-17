@@ -40,6 +40,10 @@ abstract class MPEGURLLine{
         $this->line = $line;
     }
 
+    public function getLine(){
+        return $this->line;
+    }
+
     /**
      * @param string $input
      * @return MPEGURLLine|null
@@ -81,37 +85,37 @@ abstract class MPEGURLLine{
             case Tag::EXTMxU(9):new EXTMxU($tagName);break;
             case Tag::EXTINF:new EXTINF($tagValue);break;
             //Version 1 - Draft 00
-            case Tag::EXT_X_TARGETDURATION:new EXT_X_TARGETDURATION($tagName,$tagValue);break;
-            case Tag::EXT_X_MEDIA_SEQUENCE:new EXT_X_MEDIA_SEQUENCE($tagName,$tagValue);break;
-            case Tag::EXT_X_KEY:new EXT_X_KEY($tagName,$tagValue);break;
-            case Tag::EXT_X_PROGRAM_DATE_TIME:new EXT_X_PROGRAM_DATE_TIME($tagName,$tagValue);break;
-            case Tag::EXT_X_ALLOW_CACHE:new EXT_X_ALLOW_CACHE($tagName,$tagValue);break;
-            case Tag::EXT_X_ENDLIST:new EXT_X_ENDLIST($tagName,$tagValue);break;
-            case Tag::EXT_X_STREAM_INF:new EXT_X_STREAM_INF($tagName,$tagValue);break;
+            case Tag::EXT_X_TARGETDURATION:new EXT_X_TARGETDURATION($tagValue);break;
+            case Tag::EXT_X_MEDIA_SEQUENCE:new EXT_X_MEDIA_SEQUENCE($tagValue);break;
+            case Tag::EXT_X_KEY:new EXT_X_KEY($tagValue);break;
+            case Tag::EXT_X_PROGRAM_DATE_TIME:new EXT_X_PROGRAM_DATE_TIME($tagValue);break;
+            case Tag::EXT_X_ALLOW_CACHE:new EXT_X_ALLOW_CACHE($tagValue);break;
+            case Tag::EXT_X_ENDLIST:new EXT_X_ENDLIST($tagValue);break;
+            case Tag::EXT_X_STREAM_INF:new EXT_X_STREAM_INF($tagValue);break;
             //Version 1 - Draft 02
-            case Tag::EXT_X_DISCONTINUITY:new EXT_X_DISCONTINUITY($tagName,$tagValue);break;
+            case Tag::EXT_X_DISCONTINUITY:new EXT_X_DISCONTINUITY($tagValue);break;
             //Version 2 - Draft 03
-            case Tag::EXT_X_VERSION:new EXT_X_VERSION($tagName,$tagValue);break;
+            case Tag::EXT_X_VERSION:new EXT_X_VERSION($tagValue);break;
             //Version 3 - Draft 06
-            case Tag::EXT_X_PLAYLIST_TYPE:new EXT_X_PLAYLIST_TYPE($tagName,$tagValue);break;
+            case Tag::EXT_X_PLAYLIST_TYPE:new EXT_X_PLAYLIST_TYPE($tagValue);break;
             //Version 4 - Draft 07
-            case Tag::EXT_X_BYTERANGE:new EXT_X_BYTERANGE($tagName,$tagValue);break;
-            case Tag::EXT_X_MEDIA:new EXT_X_MEDIA($tagName,$tagValue);break;
-            case Tag::EXT_X_I_FRAMES_ONLY:new EXT_X_I_FRAMES_ONLY($tagName,$tagValue);break;
-            case Tag::EXT_X_I_FRAME_STREAM_INF:new EXT_X_I_FRAME_STREAM_INF($tagName,$tagValue);break;
+            case Tag::EXT_X_BYTERANGE:new EXT_X_BYTERANGE($tagValue);break;
+            case Tag::EXT_X_MEDIA:new EXT_X_MEDIA($tagValue);break;
+            case Tag::EXT_X_I_FRAMES_ONLY:new EXT_X_I_FRAMES_ONLY($tagValue);break;
+            case Tag::EXT_X_I_FRAME_STREAM_INF:new EXT_X_I_FRAME_STREAM_INF($tagValue);break;
             //Version 5 - Draft 09
-            case Tag::EXT_X_MAP:new EXT_X_MAP($tagName,$tagValue);break;
+            case Tag::EXT_X_MAP:new EXT_X_MAP($tagValue);break;
             //Version 6 - Draft 12
-            case Tag::EXT_X_DISCONTINUITY_SEQUENCE:new EXT_X_DISCONTINUITY_SEQUENCE($tagName,$tagValue);break;
-            case Tag::EXT_X_START:new EXT_X_START($tagName,$tagValue);break;
+            case Tag::EXT_X_DISCONTINUITY_SEQUENCE:new EXT_X_DISCONTINUITY_SEQUENCE($tagValue);break;
+            case Tag::EXT_X_START:new EXT_X_START($tagValue);break;
             //Version 6 - Draft 13
-            case Tag::EXT_X_INDEPENDENT_SEGMENTS:new EXT_X_INDEPENDENT_SEGMENTS($tagName,$tagValue);break;
+            case Tag::EXT_X_INDEPENDENT_SEGMENTS:new EXT_X_INDEPENDENT_SEGMENTS($tagValue);break;
             //Version 7 - Draft 14
-            case Tag::EXT_X_SESSION_DATA:new EXT_X_SESSION_DATA($tagName,$tagValue);break;
+            case Tag::EXT_X_SESSION_DATA:new EXT_X_SESSION_DATA($tagValue);break;
             //Version 7 - Draft 17
-            case Tag::EXT_X_SESSION_KEY:new EXT_X_SESSION_KEY($tagName,$tagValue);break;
+            case Tag::EXT_X_SESSION_KEY:new EXT_X_SESSION_KEY($tagValue);break;
             //Version 7 - Draft 19
-            case Tag::EXT_X_DATERANGE:new EXT_X_DATERANGE($tagName,$tagValue);break;
+            case Tag::EXT_X_DATERANGE:new EXT_X_DATERANGE($tagValue);break;
         }
         return new Tag($tagName,$tagValue);
     }
