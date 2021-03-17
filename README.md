@@ -12,4 +12,29 @@ This yocLibrary enables your project to read and write MPEGURL files in PHP.
 
 ## Use
 
-Coming soon
+Read:
+```php
+use YOCLIB\MPEGURL\MPEGURL;
+
+$fileContent = '';
+$fileContent .= '#EXTM3U';
+$fileContent .= '#EXTINF:123,The example file';
+$fileContent .= '/home/user/test.mp3';
+
+$mpegurl = MPEGURL::read($fileContent);
+```
+
+Write:
+```php
+use YOCLIB\MPEGURL\MPEGURL;
+use YOCLIB\MPEGURL\Lines\Location;
+use YOCLIB\MPEGURL\Lines\Tags\EXTINF;
+use YOCLIB\MPEGURL\Lines\Tags\EXTMxU;
+
+$mpegurl = new MPEGURL();
+$mpegurl->addLine(new EXTMxU());
+$mpegurl->addLine(new EXTINF('123,The example file'));
+$mpegurl->addLine(new Location('/home/user/test.mp3'));
+
+$fileContent = MPEGURL::write($mpegurl);
+```

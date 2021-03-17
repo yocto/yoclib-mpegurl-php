@@ -18,8 +18,8 @@ class MPEGURL{
      */
     private $lines;
 
-    private function __construct($lines){
-        $this->lines = $lines;
+    private function __construct($lines=null){
+        $this->lines = $lines ?? [];
     }
 
     public function addLine(MPEGURLLine $line){
